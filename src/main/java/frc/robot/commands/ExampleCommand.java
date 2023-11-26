@@ -5,12 +5,16 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Chassis;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
 public class ExampleCommand extends CommandBase {
-  @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
+  @SuppressWarnings({ "PMD.UnusedPrivateField", "PMD.SingularField" })
   private final ExampleSubsystem m_subsystem;
+  private Chassis chassis = new Chassis();
+  private Timer time = new Timer();
 
   /**
    * Creates a new ExampleCommand.
@@ -25,15 +29,24 @@ public class ExampleCommand extends CommandBase {
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    chassis.setspeed(0.5); // testing to see if this is where we put autonomus
+    Timer.delay(5);
+    chassis.setspeed(0);
+    isFinished();
+
+  }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    chassis.setspeed(0);
+  }
 
   // Returns true when the command should end.
   @Override
