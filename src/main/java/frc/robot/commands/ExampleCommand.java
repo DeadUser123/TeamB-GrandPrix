@@ -36,7 +36,7 @@ public class ExampleCommand extends CommandBase {
   @Override
   public void execute() {
     chassis.setspeed(0.5); // testing to see if this is where we put autonomus
-    Timer.delay(5);
+    time.delay(5);
     chassis.setspeed(0);
     isFinished();
 
