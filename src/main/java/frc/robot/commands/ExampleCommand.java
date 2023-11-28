@@ -38,7 +38,6 @@ public class ExampleCommand extends CommandBase {
     chassis.setspeed(0.5); // testing to see if this is where we put autonomus
     time.delay(5);
     chassis.setspeed(0);
-    isFinished();
 
   }
 
