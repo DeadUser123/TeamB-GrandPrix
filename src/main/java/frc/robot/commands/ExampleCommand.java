@@ -6,7 +6,6 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Chassis;
-import frc.robot.subsystem.Clamp;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
@@ -16,7 +15,6 @@ public class ExampleCommand extends CommandBase {
   private final ExampleSubsystem m_subsystem;
   private Chassis chassis = new Chassis();
   private Timer time = new Timer();
-  private Clamp clamp = new Clamp();
 
   /**
    * Creates a new ExampleCommand.
@@ -37,11 +35,9 @@ public class ExampleCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    clamp.close();
     chassis.setspeed(0.5); // testing to see if this is where we put autonomus
     time.delay(5);
     chassis.setspeed(0);
-    clamp.open();
     isFinished();
 
   }
