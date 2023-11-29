@@ -4,7 +4,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.Chassis;
@@ -22,6 +24,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
   private RobotContainer m_robotContainer;
   private Chassis chassis;
+  private XboxController controller;
 
   /**
    * This function is run when the robot is first started up and should be used
@@ -34,6 +37,7 @@ public class Robot extends TimedRobot {
     // and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    controller = new XboxController(Constants.CONTROLLERPORT);
   }
 
   /**
@@ -100,6 +104,8 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+    chassis.setspeed(controller.getLeftY());
+    chassis.turn(controller.getRightX());
   }
 
   @Override

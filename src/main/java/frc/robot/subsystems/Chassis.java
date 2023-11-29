@@ -21,32 +21,27 @@ public class Chassis {
     }
 
     public void turn(double direction) {
-        time+=1;
-        
-        if(direction != 0){
-            if(time > Constants.MAXTURNVALUE){
+        time += 1;
+
+        if (direction != 0) {
+            if (time > Constants.MAXTURNVALUE) {
                 time = Constants.MAXTURNVALUE;
                 rotatemotor.set(0);
-            } 
-            else{
-                if(direction > 0){
+            } else {
+                if (direction > 0) {
                     rotatemotor.set(.1);
                     prevdirect = 1;
-                }
-                else{
+                } else {
                     rotatemotor.set(-.1);
                     prevdirect = -1;
                 }
             }
-        }
-        else{
+        } else {
             rotatemotor.set(-1 * prevdirect);
-            timer.delay(time/0.2);
+            timer.delay(time / 0.2);
             rotatemotor.set(0);
 
         }
-        
-
 
     }
 }
