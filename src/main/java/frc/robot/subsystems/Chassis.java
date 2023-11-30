@@ -8,7 +8,7 @@ public class Chassis {
     private Victor drivemotor; // the motor that powers the speed
     private Victor rotatemotor; // the motor for turning the robot
     private Timer timer;
-    private int time = 0;
+    // private int time = 0;
     private double current_position = 0;
     private int direct;
 
