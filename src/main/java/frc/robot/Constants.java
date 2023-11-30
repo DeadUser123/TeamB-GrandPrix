@@ -18,5 +18,5 @@ package frc.robot;
  */
 public final class Constants {
     public static final int DRIVEMOTORPORT = 0, ROTATEMOTORPORT = 1, CONTROLLERPORT = 2;
-    public static final int MAXTURNVALUE = 25;
+    // public static final int MAXTURNVALUE = 25; old code
 }
