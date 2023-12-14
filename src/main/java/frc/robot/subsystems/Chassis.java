@@ -1,18 +1,19 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import frc.robot.Constants;
 
 public class Chassis {
-    private Victor drivemotor; // the motor that powers the speed
-    private Victor rotatemotor; // the motor for turning the robot
+    private Spark drivemotor; // the motor that powers the speed
+    private Talon rotatemotor; // the motor for turning the robot
     // private int time = 0;
     private double current_position = 0;
 
     public Chassis() {
-        drivemotor = new Victor(Constants.DRIVEMOTORPORT);
-        rotatemotor = new Victor(Constants.ROTATEMOTORPORT);
+        drivemotor = new Spark(Constants.DRIVEMOTORPORT);
+        rotatemotor = new Talon(Constants.ROTATEMOTORPORT);
         drivemotor.set(0);
         rotatemotor.set(0);
     }
